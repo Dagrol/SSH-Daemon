@@ -11,6 +11,8 @@ while true; do
 
    fi
   done < ssh-users
+  
+  sleep 1
 
 done
 
