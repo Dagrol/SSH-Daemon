@@ -5,9 +5,15 @@ while true; do
   while read user
   do
    
-   USB=/Volumes/$user
+   name=$(echo $user | cut -d' ' -f1)
+   number=$(echo $user | cut -d' ' -f2)
+
+   echo $name
+   echo $number
+   
+   USB=/Volumes/$name
    if [ -d "$USB" ]; then
-     # Enter your command here
+     $USB/add_key $number
 
    fi
   done < ssh-users
